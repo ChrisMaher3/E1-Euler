@@ -72,14 +72,26 @@ while abs(t3[-1] - t_max) > dt3 / 2:
     av_new = np.cos(t_new)
     av3.append(av_new)    
 
-plt.plot(t1, x1, label='h = 0.05', color='tab:blue')
-plt.plot(t2, x2, label='h = 0.01', color='tab:orange')
-plt.plot(t3, x3, label='h = 0.005', color='tab:green')
-plt.plot(t1, ax1, '--', label='a', color='black')
+fig, ax = plt.subplots(1, 2, figsize=(12, 6))
 
-plt.xlabel('t')
-plt.ylabel('x(t)')
-plt.legend()
+ax[0].plot(t1, x1, label='h = 0.05', color='tab:blue')
+ax[0].plot(t2, x2, label='h = 0.01', color='tab:orange')
+ax[0].plot(t3, x3, label='h = 0.005', color='tab:green')
+ax[0].plot(t1, ax1, '--', label='a', color='black')
+
+ax[0].set_xlabel('t')
+ax[0].set_ylabel('x(t)')
+ax[0].legend()
+
+ax[1].plot(t1, v1, label='h = 0.05')
+ax[1].plot(t2, v2, label='h = 0.01')
+ax[1].plot(t3, v3, label='h = 0.005')
+ax[1].plot(t1, av1, '--', label='a', color='black')
+
+ax[1].set_xlabel('t')
+ax[1].set_ylabel('v(t)')
+ax[1].legend()
 plt.tight_layout()
 plt.savefig("E4_part1.svg",bbox_inches='tight') 
 plt.show()
+
