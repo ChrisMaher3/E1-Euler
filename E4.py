@@ -116,7 +116,7 @@ ax[0].plot(t2, diffx2, label='h = 0.01')
 ax[0].plot(t3, diffx3, label='h = 0.005')
 
 ax[0].set_xlabel('t')
-ax[0].set_ylabel('Difference between Numerical & Exact Solution')
+ax[0].set_ylabel('Difference between Numerical & Exact Solution (x(t))')
 ax[0].legend()
 
 v1 = np.array(v1)
@@ -139,10 +139,10 @@ ax[1].plot(t2, diffv2, label='h = 0.01')
 ax[1].plot(t3, diffv3, label='h = 0.005')
 
 ax[1].set_xlabel('t')
-ax[1].set_ylabel('Difference between Numerical & Exact Solution')
+ax[1].set_ylabel('Difference between Numerical & Exact Solution (v(t))')
 ax[1].legend()
 plt.tight_layout()
-#plt.savefig("E4_part2.svg",bbox_inches='tight') 
+plt.savefig("E4_part2.svg",bbox_inches='tight') 
 plt.show()
 
 
