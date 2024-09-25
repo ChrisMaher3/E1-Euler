@@ -92,6 +92,57 @@ ax[1].set_xlabel('t')
 ax[1].set_ylabel('v(t)')
 ax[1].legend()
 plt.tight_layout()
-plt.savefig("E4_part1.svg",bbox_inches='tight') 
+#plt.savefig("E4_part1.svg",bbox_inches='tight') 
 plt.show()
+
+x1 = np.array(x1)
+x2 = np.array(x2)
+x3 = np.array(x3)
+
+
+ax1 = np.array(ax1)
+ax2 = np.array(ax2)
+ax3 = np.array(ax3)
+
+av = np.array(av1)
+
+
+diffx1 = (x1 - ax1)
+diffx2 = (x2 - ax2)
+diffx3 = (x3 - ax3)
+fig, ax = plt.subplots(1, 2, figsize=(12, 6))
+ax[0].plot(t1, diffx1, label='h = 0.05')
+ax[0].plot(t2, diffx2, label='h = 0.01')
+ax[0].plot(t3, diffx3, label='h = 0.005')
+
+ax[0].set_xlabel('t')
+ax[0].set_ylabel('Difference between Numerical & Exact Solution')
+ax[0].legend()
+
+v1 = np.array(v1)
+v2 = np.array(v2)
+v3 = np.array(v3)
+
+
+av1 = np.array(av1)
+av2 = np.array(av2)
+av3 = np.array(av3)
+
+
+diffv1 = (v1 - av1)
+diffv2 = (v2 - av2)
+diffv3 = (v3 - av3)
+
+
+ax[1].plot(t1, diffv1, label='h = 0.05')
+ax[1].plot(t2, diffv2, label='h = 0.01')
+ax[1].plot(t3, diffv3, label='h = 0.005')
+
+ax[1].set_xlabel('t')
+ax[1].set_ylabel('Difference between Numerical & Exact Solution')
+ax[1].legend()
+plt.tight_layout()
+#plt.savefig("E4_part2.svg",bbox_inches='tight') 
+plt.show()
+
 
